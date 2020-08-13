@@ -26,7 +26,7 @@ app.post('/',urlencodedParser,(req,res)=>{
     io.emit("notify",{'jobid':jobid});
     
 });
-app.get('/',(req,res)=>{
+app.get('/test',(req,res)=>{
   console.log('from get request server is running');
 });
 // Socket setup
