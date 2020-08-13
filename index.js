@@ -28,6 +28,7 @@ app.post('/',urlencodedParser,(req,res)=>{
 });
 app.get('/test',(req,res)=>{
   console.log('from get request server is running');
+  res.send("from get request server is running");
 });
 // Socket setup
 const io = socket(server);
