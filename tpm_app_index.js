@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 // Create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 // App setup
-const PORT = 4000;
+const PORT = 3000;
 const app = express();
 const server = app.listen(PORT, function () {
   console.log(`Listening on port ${PORT}`);
@@ -39,7 +39,8 @@ io.on("connection", function (usersocket) {
   usersocket.emit("msg","my message data test");
   usersocket.on('join',function(data){
       console.log('data ',data);
-    usersocket.join(data);
+      console.log('data ',data['device_id']);
+    usersocket.join(data['device_id']);
   });
 //   createdSocket = usersocket;
 });

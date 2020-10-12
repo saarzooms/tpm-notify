@@ -1,9 +1,9 @@
 const io = require("socket.io-client");
  
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect('http://localhost:3000');
 socket.on('connect', function(){
     console.log('connected with client');
-    socket.emit('join','12234');
+    socket.emit('join',{'device_id':'e204cdd5eea274f7'});
 });
 socket.on("msg", function (data) {
     console.log("msg received",data);
